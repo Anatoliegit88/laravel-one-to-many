@@ -24,6 +24,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
+            'profession_id' => ['nullable', 'exists:professions,id'],
             'title' => ['required', 'max:150', 'unique:projects'],
             'content' => ['nullable'],
             'cover_image' => ['nullable', 'image', 'max:512']
